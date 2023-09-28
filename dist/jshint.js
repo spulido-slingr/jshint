@@ -2,6 +2,7 @@
 var JSHINT;
 if (typeof window === 'undefined') window = {};
 (function () {
+var define = null;
 var require;
 require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var identifierStartTable = [];
@@ -25411,7 +25412,7 @@ var scopeManager = require("./scope-manager.js");
 var prodParams   = require("./prod-params.js");
 
 // We need this module here because environments such as IE and Rhino
-// don't necessarilly expose the 'console' API and browserify uses
+// don't necessarily expose the 'console' API and browserify uses
 // it to log things. It's a sad state of affair, really.
 var console = require("console-browserify");
 
@@ -31498,7 +31499,7 @@ var JSHINT = (function() {
   function computedPropertyName(context) {
     advance("[");
 
-    // Explicitly reclassify token as a delimeter to prevent its later
+    // Explicitly reclassify token as a delimiter to prevent its later
     // interpretation as an "infix" operator.
     state.tokens.curr.delim = true;
     state.tokens.curr.lbp = 0;
